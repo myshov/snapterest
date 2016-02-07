@@ -1,14 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var listOfItems = 
-    <ul className="list-of-items">
-        <li className="item-1" key="item-1">Item 1</li>
-        <li className="item-2" key="item-2">Item 2</li>
-        <li className="item-3" key="item-3">Item 3</li>
-    </ul>;
+var ReactClass = React.createClass({
+    render: function() {
+        return React.createElement(
+            'h1',
+            {className: 'header'},
+            'React Component'
+        );
+    }
+});
 
-ReactDOM.render(
-    listOfItems,
+var reactComponentElement = React.createElement(ReactClass);
+var reactComponent = ReactDOM.render(
+    reactComponentElement,
     document.getElementById('react-application')
 );
